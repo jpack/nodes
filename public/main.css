@@ -1,19 +1,41 @@
+.board{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
 .board-tile {
 	height: 48px;
 	width: 48px;
-	border: 1px solid #EEE;
+	border: 1px solid #aaa;
 }
 
-.board-row {
-	width: 100%;
-    display: table-row;
+.board-btn {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.board{
-	border: 1px solid #EEE;
-	margin-left: auto;
-	margin-right: auto;
+.target{
+    margin-left: auto;
+    margin-right: auto;
     display: table;
+}
+
+.target-tile {
+    height: 24px;
+    width: 24px;
+    border: 1px solid #aaa;
+}
+
+.target-btn {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .inactive{
@@ -26,10 +48,3 @@
     color: #ffffff;
 }
 
-.board-btn {
-	border: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}

@@ -1,14 +1,16 @@
 var nodes = angular.module('nodes', []);
+var size = 10;
 
 nodes.controller('boardCtrl', ['$scope', function ($scope) {
-    /* Initilize the board */
-    var size = 10;
+    /* Init */
 
+
+    // Set up the board.
     $scope.board = [];
-    for (var i = 0; i < size; i++) {
+    for ( var i = 0; i < size; i++) {
         $scope.board[i] = [];
 
-        for (var j = 0; j < size; j++) {
+        for ( var j = 0; j < size; j++) {
             $scope.board[i][j] = false;
         }
     }
@@ -31,4 +33,26 @@ nodes.controller('boardCtrl', ['$scope', function ($scope) {
 
         socket.emit('board-update', {'row': row, 'col': col, 'tileValue': $scope.board[row][col]});
     };
+}]);
+
+nodes.controller('targetCtrl', ['$scope', function($scope){
+    // Set up the target
+    $scope.target = [];
+    for ( var i = 0; i < size; i++) {
+        $scope.target[i] = [];
+
+        for (var j = 0; j < size; j++) {
+            // Set the value to a random true or false.
+            $scope.target[i][j] = Math.random()<.5;
+        }
+    }
+
+    $scope.generateTarget = function(){
+        for (i = 0; i < size; i++) {
+            for (j = 0; j < size; j++) {
+                // Set the value to a random true or false.
+                $scope.target[i][j] = Math.random()<.5;
+            }
+        }
+    }
 }]);
