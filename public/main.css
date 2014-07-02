@@ -1,0 +1,36 @@
+.board-tile {
+	height: 48px;
+	width: 48px;
+	border: 1px solid #EEE;
+    display: table-cell;
+}
+
+.board-row {
+	width: 100%;
+    display: table-row;
+}
+
+.board{
+	border: 1px solid #EEE;
+	margin-left: auto;
+	margin-right: auto;
+    display: table;
+}
+
+.inactive{
+    background-color: #fff;
+    color: #000000;
+}
+
+.active{
+    background-color: #000;
+    color: #ffffff;
+}
+
+.board-btn {
+	border: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

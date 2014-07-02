@@ -1,0 +1,11 @@
+{
+	"name"         : "node-game",
+	"version"      : "0.0.0",
+	"description"  : "Simple node.js game.",
+	"main"         : "server.js",
+	"author"       : "Jayson",
+	"dependencies" : {
+		"express"    : "~3.4.4",
+		"mongoose"   : "~3.6.2"
+	}
+}
