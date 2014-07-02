@@ -24,9 +24,11 @@ nodes.controller('boardCtrl', ['$scope', function ($scope) {
     });
 
     /* Create scope functions */
-    $scope.updateTile = function(row, col, tileValue){
+    $scope.updateTile = function(row, col){
         console.log('Sending tile update: ' + row + ' ' + col);
 
-        socket.emit('board-update', {'row': row, 'col': col, 'tileValue': tileValue});
+        $scope.board[row][col] = !$scope.board[row][col];
+
+        socket.emit('board-update', {'row': row, 'col': col, 'tileValue': $scope.board[row][col]});
     };
 }]);

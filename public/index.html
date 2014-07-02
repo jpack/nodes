@@ -31,13 +31,529 @@
     <div class="row">
         <div id="game" class="col-md-8">
             <div class="board" ng-controller="boardCtrl">
-                <div class="board-row" ng-repeat="row in board" ng-init="rowIndex = $index">
-                    <div class="board-tile" ng-repeat="tile in row" ng-init="colIndex = $index; currTile = tile">
-                        <button class="board-btn" ng-click="currTile = !currTile; updateTile(rowIndex, colIndex, currTile)" ng-class="{active: currTile, inactive: !currTile}">
-                            {{rowIndex + ' ' + colIndex + ' ' + currTile}}
-                        </button>
-                    </div>
-                </div>
+
+                <table>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 0)" ng-class="{active: board[0][0] , inactive: !board[0][0]}">
+                                {{board[0][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 1)" ng-class="{active: board[0][1] , inactive: !board[0][1]}">
+                                {{board[0][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 2)" ng-class="{active: board[0][2] , inactive: !board[0][2]}">
+                                {{board[0][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 3)" ng-class="{active: board[0][3] , inactive: !board[0][3]}">
+                                {{board[0][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 4)" ng-class="{active: board[0][4] , inactive: !board[0][4]}">
+                                {{board[0][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 5)" ng-class="{active: board[0][5] , inactive: !board[0][5]}">
+                                {{board[0][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 6)" ng-class="{active: board[0][6] , inactive: !board[0][6]}">
+                                {{board[0][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 7)" ng-class="{active: board[0][7] , inactive: !board[0][7]}">
+                                {{board[0][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 8)" ng-class="{active: board[0][8] , inactive: !board[0][8]}">
+                                {{board[0][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(0, 9)" ng-class="{active: board[0][9] , inactive: !board[0][9]}">
+                                {{board[0][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 0)" ng-class="{active: board[1][0] , inactive: !board[1][0]}">
+                                {{board[1][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 1)" ng-class="{active: board[1][1] , inactive: !board[1][1]}">
+                                {{board[1][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 2)" ng-class="{active: board[1][2] , inactive: !board[1][2]}">
+                                {{board[1][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 3)" ng-class="{active: board[1][3] , inactive: !board[1][3]}">
+                                {{board[1][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 4)" ng-class="{active: board[1][4] , inactive: !board[1][4]}">
+                                {{board[1][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 5)" ng-class="{active: board[1][5] , inactive: !board[1][5]}">
+                                {{board[1][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 6)" ng-class="{active: board[1][6] , inactive: !board[1][6]}">
+                                {{board[1][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 7)" ng-class="{active: board[1][7] , inactive: !board[1][7]}">
+                                {{board[1][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 8)" ng-class="{active: board[1][8] , inactive: !board[1][8]}">
+                                {{board[1][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(1, 9)" ng-class="{active: board[1][9] , inactive: !board[1][9]}">
+                                {{board[1][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 0)" ng-class="{active: board[2][0] , inactive: !board[2][0]}">
+                                {{board[2][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 1)" ng-class="{active: board[2][1] , inactive: !board[2][1]}">
+                                {{board[2][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 2)" ng-class="{active: board[2][2] , inactive: !board[2][2]}">
+                                {{board[2][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 3)" ng-class="{active: board[2][3] , inactive: !board[2][3]}">
+                                {{board[2][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 4)" ng-class="{active: board[2][4] , inactive: !board[2][4]}">
+                                {{board[2][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 5)" ng-class="{active: board[2][5] , inactive: !board[2][5]}">
+                                {{board[2][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 6)" ng-class="{active: board[2][6] , inactive: !board[2][6]}">
+                                {{board[2][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 7)" ng-class="{active: board[2][7] , inactive: !board[2][7]}">
+                                {{board[2][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 8)" ng-class="{active: board[2][8] , inactive: !board[2][8]}">
+                                {{board[2][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(2, 9)" ng-class="{active: board[2][9] , inactive: !board[2][9]}">
+                                {{board[2][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 0)" ng-class="{active: board[3][0] , inactive: !board[3][0]}">
+                                {{board[3][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 1)" ng-class="{active: board[3][1] , inactive: !board[3][1]}">
+                                {{board[3][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 2)" ng-class="{active: board[3][2] , inactive: !board[3][2]}">
+                                {{board[3][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 3)" ng-class="{active: board[3][3] , inactive: !board[3][3]}">
+                                {{board[3][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 4)" ng-class="{active: board[3][4] , inactive: !board[3][4]}">
+                                {{board[3][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 5)" ng-class="{active: board[3][5] , inactive: !board[3][5]}">
+                                {{board[3][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 6)" ng-class="{active: board[3][6] , inactive: !board[3][6]}">
+                                {{board[3][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 7)" ng-class="{active: board[3][7] , inactive: !board[3][7]}">
+                                {{board[3][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 8)" ng-class="{active: board[3][8] , inactive: !board[3][8]}">
+                                {{board[3][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(3, 9)" ng-class="{active: board[3][9] , inactive: !board[3][9]}">
+                                {{board[3][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 0)" ng-class="{active: board[4][0] , inactive: !board[4][0]}">
+                                {{board[4][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 1)" ng-class="{active: board[4][1] , inactive: !board[4][1]}">
+                                {{board[4][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 2)" ng-class="{active: board[4][2] , inactive: !board[4][2]}">
+                                {{board[4][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 3)" ng-class="{active: board[4][3] , inactive: !board[4][3]}">
+                                {{board[4][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 4)" ng-class="{active: board[4][4] , inactive: !board[4][4]}">
+                                {{board[4][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 5)" ng-class="{active: board[4][5] , inactive: !board[4][5]}">
+                                {{board[4][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 6)" ng-class="{active: board[4][6] , inactive: !board[4][6]}">
+                                {{board[4][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 7)" ng-class="{active: board[4][7] , inactive: !board[4][7]}">
+                                {{board[4][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 8)" ng-class="{active: board[4][8] , inactive: !board[4][8]}">
+                                {{board[4][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(4, 9)" ng-class="{active: board[4][9] , inactive: !board[4][9]}">
+                                {{board[4][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 0)" ng-class="{active: board[5][0] , inactive: !board[5][0]}">
+                                {{board[5][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 1)" ng-class="{active: board[5][1] , inactive: !board[5][1]}">
+                                {{board[5][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 2)" ng-class="{active: board[5][2] , inactive: !board[5][2]}">
+                                {{board[5][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 3)" ng-class="{active: board[5][3] , inactive: !board[5][3]}">
+                                {{board[5][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 4)" ng-class="{active: board[5][4] , inactive: !board[5][4]}">
+                                {{board[5][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 5)" ng-class="{active: board[5][5] , inactive: !board[5][5]}">
+                                {{board[5][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 6)" ng-class="{active: board[5][6] , inactive: !board[5][6]}">
+                                {{board[5][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 7)" ng-class="{active: board[5][7] , inactive: !board[5][7]}">
+                                {{board[5][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 8)" ng-class="{active: board[5][8] , inactive: !board[5][8]}">
+                                {{board[5][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(5, 9)" ng-class="{active: board[5][9] , inactive: !board[5][9]}">
+                                {{board[5][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 0)" ng-class="{active: board[6][0] , inactive: !board[6][0]}">
+                                {{board[6][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 1)" ng-class="{active: board[6][1] , inactive: !board[6][1]}">
+                                {{board[6][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 2)" ng-class="{active: board[6][2] , inactive: !board[6][2]}">
+                                {{board[6][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 3)" ng-class="{active: board[6][3] , inactive: !board[6][3]}">
+                                {{board[6][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 4)" ng-class="{active: board[6][4] , inactive: !board[6][4]}">
+                                {{board[6][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 5)" ng-class="{active: board[6][5] , inactive: !board[6][5]}">
+                                {{board[6][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 6)" ng-class="{active: board[6][6] , inactive: !board[6][6]}">
+                                {{board[6][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 7)" ng-class="{active: board[6][7] , inactive: !board[6][7]}">
+                                {{board[6][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 8)" ng-class="{active: board[6][8] , inactive: !board[6][8]}">
+                                {{board[6][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(6, 9)" ng-class="{active: board[6][9] , inactive: !board[6][9]}">
+                                {{board[6][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 0)" ng-class="{active: board[7][0] , inactive: !board[7][0]}">
+                                {{board[7][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 1)" ng-class="{active: board[7][1] , inactive: !board[7][1]}">
+                                {{board[7][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 2)" ng-class="{active: board[7][2] , inactive: !board[7][2]}">
+                                {{board[7][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 3)" ng-class="{active: board[7][3] , inactive: !board[7][3]}">
+                                {{board[7][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 4)" ng-class="{active: board[7][4] , inactive: !board[7][4]}">
+                                {{board[7][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 5)" ng-class="{active: board[7][5] , inactive: !board[7][5]}">
+                                {{board[7][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 6)" ng-class="{active: board[7][6] , inactive: !board[7][6]}">
+                                {{board[7][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 7)" ng-class="{active: board[7][7] , inactive: !board[7][7]}">
+                                {{board[7][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 8)" ng-class="{active: board[7][8] , inactive: !board[7][8]}">
+                                {{board[7][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(7, 9)" ng-class="{active: board[7][9] , inactive: !board[7][9]}">
+                                {{board[7][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 0)" ng-class="{active: board[8][0] , inactive: !board[8][0]}">
+                                {{board[8][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 1)" ng-class="{active: board[8][1] , inactive: !board[8][1]}">
+                                {{board[8][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 2)" ng-class="{active: board[8][2] , inactive: !board[8][2]}">
+                                {{board[8][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 3)" ng-class="{active: board[8][3] , inactive: !board[8][3]}">
+                                {{board[8][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 4)" ng-class="{active: board[8][4] , inactive: !board[8][4]}">
+                                {{board[8][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 5)" ng-class="{active: board[8][5] , inactive: !board[8][5]}">
+                                {{board[8][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 6)" ng-class="{active: board[8][6] , inactive: !board[8][6]}">
+                                {{board[8][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 7)" ng-class="{active: board[8][7] , inactive: !board[8][7]}">
+                                {{board[8][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 8)" ng-class="{active: board[8][8] , inactive: !board[8][8]}">
+                                {{board[8][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(8, 9)" ng-class="{active: board[8][9] , inactive: !board[8][9]}">
+                                {{board[8][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 0)" ng-class="{active: board[9][0] , inactive: !board[9][0]}">
+                                {{board[9][0]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 1)" ng-class="{active: board[9][1] , inactive: !board[9][1]}">
+                                {{board[9][1]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 2)" ng-class="{active: board[9][2] , inactive: !board[9][2]}">
+                                {{board[9][2]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 3)" ng-class="{active: board[9][3] , inactive: !board[9][3]}">
+                                {{board[9][3]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 4)" ng-class="{active: board[9][4] , inactive: !board[9][4]}">
+                                {{board[9][4]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 5)" ng-class="{active: board[9][5] , inactive: !board[9][5]}">
+                                {{board[9][5]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 6)" ng-class="{active: board[9][6] , inactive: !board[9][6]}">
+                                {{board[9][6]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 7)" ng-class="{active: board[9][7] , inactive: !board[9][7]}">
+                                {{board[9][7]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 8)" ng-class="{active: board[9][8] , inactive: !board[9][8]}">
+                                {{board[9][8]}}
+                            </button>
+                        </td>
+                        <td class="board-tile">
+                            <button class="board-btn" ng-click="updateTile(9, 9)" ng-class="{active: board[9][9] , inactive: !board[9][9]}">
+                                {{board[9][9]}}
+                            </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div id="sidebar" class="col-md-4 center-text">
