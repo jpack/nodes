@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="main.css" type="text/css">
 
     <!-- JS -->
+    <script src="https://raw.githubusercontent.com/siddii/angular-timer/master/dist/angular-timer.min.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" type="text/javascript"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="nodesCtrl">
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -30,7 +31,7 @@
     </div>
     <div class="row">
         <div id="gameDisplay" class="col-md-12">
-            <div class="board" ng-controller="boardCtrl">
+            <div class="board">
             <table>
             <tr>
                 <td class="board-tile">
@@ -558,8 +559,8 @@
     </div>
     <div class="row">
         <div id="targetDisplay" class="col-md-12 text-center">
-        <h4>Match.</h4>
-            <div class="target" ng-controller="targetCtrl">
+        <h4>Match in {{timer}} seconds.</h4>
+            <div class="target">
             <table>
             <tr>
                 <td class="target-tile"></td>
